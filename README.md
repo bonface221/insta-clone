@@ -1,4 +1,4 @@
-# BonInsta
+## BonInsta
 An application where users can:
 *   Sign up
 *   Sign in (authentication)
@@ -78,7 +78,7 @@ pip freeze
 
 ## Authors
 
-* **Bonface221**  - [instagram-night](https://github.com/bonface221/insta-clone)
+* **Bonface221**  - [boninsta](https://github.com/bonface221/insta-clone)
 
 
 ## License
