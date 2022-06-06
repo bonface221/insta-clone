@@ -18,16 +18,25 @@ python3.9 -m venv --without-pip virtual
 
 ### Prerequisites
 
-*get pip 
+*get pipenv
 
 ```
-curl https://bootstrap.pypa.io/get-pip|python
+Debian- sudo apt install pipenv
+```
+```
+Windows- pip install --user pipenv
+```
+```
+Locate python interpreter
+$ pipenv --py
+/Users/kennethreitz/.local/share/virtualenvs/test-Skyy4vre/bin/python
 ```
 
-*get all requirements in the requirements.txt file
+
+*get all requirements in the Pipfile.lock
 
 ```
-pip install -r requirements.txt
+$ pipenv install
 ```
 
 ### Installing
@@ -47,7 +56,8 @@ And view the site at the port provided which is most likely 127.0.0.1:8000
 To run the automated tests for this system, run the following command
 
 ```
-python3.9 manage.py test instagram
+python3.9 manage.py test base
+
 ```
 
 ## Deployment
@@ -74,6 +84,7 @@ Find all the versions used in the pipfile.lock or run the following command to c
 
 ```
 pip freeze
+
 ```
 
 ## Authors
