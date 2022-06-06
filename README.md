@@ -13,7 +13,7 @@ An application where users can:
 *   git clone the project to your local machine
 *   Set up a virtual environment in the project folder
 ```
-python3.9 -m venv --without-pip virtual
+$ pipenv shell
 ```
 
 ### Prerequisites
