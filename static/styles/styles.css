@@ -1,0 +1,389 @@
+@import url('//fonts.cdnfonts.com/css/billabong');
+
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+  background: #fafafa;
+}
+
+/* start header */
+
+.navigation {
+  background-color: #ffffff;
+  height: 70px;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 50px;
+  box-sizing: border-box;
+  z-index: 2;
+  /* animation magic */
+  transition: all 0.4s ease-in-out;
+
+}
+
+.shrink {
+  height: 50px;
+}
+
+.navigation .logo a {
+  position: relative;
+  color: #000000;
+  font-size: 30px;
+  font-family: "billabong", sans-serif;
+}
+.navigation-search-container input:focus {
+  outline: none;
+}
+.navigation-search-container {
+  position: relative;
+}
+.navigation-search-container input::placeholder {
+  text-align: center;
+}
+.navigation-search-container input {
+  background-color: #EFEFEF;
+  height: 30px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+}
+
+
+.navigation-icons {
+  display: flex;
+  align-items: center;
+
+}
+.navigation-icons img{
+    cursor: pointer;
+    margin: 0 10px;
+    height: 22px;
+
+}
+
+.user-profile img{
+    border-radius: 50%;
+    height: 25px;
+
+
+}
+
+/* .notification-bubble-wrapper {
+  position: relative;
+  top: -30px;
+  left: 17px;
+}
+
+.notification-bubble {
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  background: #ff2c74;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 5px 3px;
+  font-family:"Helvetica Neue", sans-serif;
+  font-weight: 500;
+
+} */
+
+/* end header */
+
+/*  main section starts */
+.main{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 70%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-gap: 30px;
+}
+
+.left-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.stories{
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    padding: 10px;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.stories::-webkit-scrollbar{
+    display: none;
+}
+
+.story{
+    flex: 0 0 auto;
+    width: 80px;
+    max-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.dp{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3px;
+    background: linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%);
+}
+
+.dp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.username{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 12px;
+    margin-top:5px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+/* main section ends */
+
+/* Post section starts */
+.post{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    margin-top: 40px;
+}
+
+.info{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.info .username{
+    width: auto;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.info .options{
+    height: 10px;
+    cursor: pointer;
+}
+
+.info .user{
+    display: flex;
+    align-items: center;
+}
+
+.info .dp{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background: none;
+}
+
+.info .dp img{
+    border: none;
+}
+
+.post-image{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.post-content{
+    width: 100%;
+    padding: 20px;
+}
+
+.likes{
+    font-weight: bold;
+}
+
+.description{
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.description span{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.time{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.comment-wrapper{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: .1rem solid rgba(0, 0, 0, 0.0975);
+}
+
+.comment-wrapper .icon{
+    height: 30px;
+    margin-left: 10px;
+}
+
+.comment-box{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding-left: 3px;
+}
+
+.comment-btn,
+.action-btn{
+    width: 70px;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: rgb(0, 162, 255);
+    opacity: 0.5;
+}
+
+.reaction-wrapper{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reaction-wrapper .icon{
+    height: 25px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.reaction-wrapper .icon.save{
+    margin-left: auto;
+}
+/* Post section ends  */
+
+/* right column starts  */
+.right-col{
+    padding: 20px;
+}
+
+.profile-card{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-card .dp{
+    flex: 0 0 auto;
+    padding: 0;
+    background: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile-card:first-child .dp{
+    width: 70px;
+    height: 70px;
+}
+
+.profile-card .dp img{
+    border: none;
+}
+
+.profile-card .username{
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+}
+
+.sub-text{
+    color: rgba(0, 0, 0, 0.5);
+    font-size:12px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.action-btn{
+    opacity: 1;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.suggestion-text{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+@media (max-width: 1100px){
+    .wrapper{
+        width: 90%;
+    }
+    .wrapper{
+        display: block;
+    }
+}
+
+@media (max-width: 500px){
+    .nav-items .icon{
+        margin: 0 5px;
+    }
+    .post-image{
+        height: 300px;
+    }
+}
+/* right column ends */
