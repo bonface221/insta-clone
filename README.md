@@ -80,12 +80,8 @@ To deploy on heroku:
 
 ## Versioning
 
-Find all the versions used in the pipfile.lock or run the following command to confirm:
+Find all the versions used in the pipfile.lock :
 
-```
-in the pipfile.lock file
-
-```
 
 ## Authors
 
