@@ -83,7 +83,7 @@ To deploy on heroku:
 Find all the versions used in the pipfile.lock or run the following command to confirm:
 
 ```
-pip freeze
+in the pipfile.lock file
 
 ```
 
