@@ -1,34 +1,43 @@
 {% load static %}
 <div class="navigation">
 	<div class="logo">
-		<a  href="{% url 'home'%}"> BonInsta </a>
+		<a href="{% url 'home'%}"> BonInsta </a>
 	</div>
 	<div class="navigation-search-container">
 		<input class="search-field" type="text" placeholder="Search" />
-        <!-- <i class="fa fa-search"></i> -->
+		<!-- <i class="fa fa-search"></i> -->
 	</div>
 	<div class="navigation-icons">
-        <a  class="navigation-link">
-            <img src="{% static 'images/home.PNG' %}" alt="">
-        </a>
-        <a  class="navigation-link">
-            <img src="{% static 'images/messenger.PNG' %}" alt="">
-        </a>
-        <a  class="navigation-link">
-            <img src="{% static 'images/add.PNG' %}" alt="">
-        </a>
 		<a class="navigation-link">
-            <img src="{% static 'images/explore.PNG' %}" alt="">			
+			<img src="{% static 'images/home.PNG' %}" alt="" />
 		</a>
 		<a class="navigation-link">
-			<img src="{% static 'images/like.PNG' %}" alt="">
+			<img src="{% static 'images/messenger.PNG' %}" alt="" />
 		</a>
-        <a class="navigation-link user-profile">
-            <img src="{% static 'images/cove1.jpg' %}" alt="">
-        </a>
+		<a class="navigation-link">
+			<img src="{% static 'images/add.PNG' %}" alt="" />
+		</a>
+		<a class="navigation-link">
+			<img src="{% static 'images/explore.PNG' %}" alt="" />
+		</a>
+		<a class="navigation-link">
+			<img src="{% static 'images/like.PNG' %}" alt="" />
+		</a>
+		<div style="position: relative">
+			<a class="navigation-link user-profile" >
+			<img id="profic" src="{% static 'images/cove1.jpg' %}" alt="" />
+			<ul 
+			style="position: absolute;"
+			class="bubble"
+			id="bubble">
+				<li><a href="{%url 'profile' 'nyenje'%}">profile</a></li>
+				<li><a href="{% url 'logout'%}">logout</a></li>
+			</ul>
+		</a>
+		</div>
+		
 	</div>
 </div>
-
 
 <!-- 
     <i class="far fa-heart">
