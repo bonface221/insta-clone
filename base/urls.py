@@ -7,5 +7,7 @@ urlpatterns=[
     path('logout/',views.logoutUser,name='logout'),
 
     path('',views.home,name='home'),
-    path('<str:pk>',views.profile,name='profile')
+    path('<int:pk>',views.profile,name='profile'),
+    path('create-post/',views.createPost,name='create-post'),
+
 ]

@@ -14,7 +14,7 @@
 					<div class="dp">
 						<img src="{% static 'images/cove1.jpg' %}" alt="" />
 					</div>
-					<a href="{% url 'profile' 'kanungo' %}"
+					<a
 						><p class="username">user_name_2</p></a
 					>
 				</div>
@@ -61,9 +61,9 @@
 					<div class="user">
 						<a href="{% url 'profile' post.profile.id%}">
 							<div class="dp">
-								<img src="{% static 'images/cove1.jpg' %}" alt="" /></div
-						></a>
-						<p class="username">Twin_bro_221</p>
+								<img src="{{post.profile.dp.url}}" alt="" /></div
+						></a>		
+						<p class="username">{{post.profile.user}}</p>
 					</div>
 					<img src="{% static 'images/option.PNG' %}" class="options" alt="" />
 				</div>
@@ -81,9 +81,7 @@
 					</div>
 					<p class="likes">1,012 likes</p>
 					<p class="description">
-						<span>username </span> Lorem ipsum dolor sit amet consectetur,
-						adipisicing elit. Pariatur tenetur veritatis placeat, molestiae
-						impedit aut provident eum quo natus molestias?
+						<span>{{post.profile.user}}</span> {{post.caption}}
 					</p>
 					<p class="time">{{post.posted|timesince}} ago</p>
 				</div>

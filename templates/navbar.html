@@ -14,7 +14,7 @@
 		<a class="navigation-link">
 			<img src="{% static 'images/messenger.PNG' %}" alt="" />
 		</a>
-		<a class="navigation-link">
+		<a href="{% url 'create-post'%}" class="navigation-link">
 			<img src="{% static 'images/add.PNG' %}" alt="" />
 		</a>
 		<a class="navigation-link">
@@ -30,7 +30,7 @@
 			style="position: absolute;"
 			class="bubble"
 			id="bubble">
-				<li><a href="{%url 'profile' 'nyenje'%}">profile</a></li>
+				<li><a href="{%url 'profile' request.user.id %}">profile</a></li>
 				<li><a href="{% url 'logout'%}">logout</a></li>
 			</ul>
 		</a>

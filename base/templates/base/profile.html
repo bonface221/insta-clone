@@ -2,17 +2,16 @@
 
 <header>
 	<div class="container">
-		{% for prof in profile %}
 		<div class="profile">
 			<div class="profile-image">
 				<img
-					src="{{prof.dp.url}}"
+					src="{{profile.dp.url}}"
 					alt=""
 				/>
 			</div>
 
 			<div class="profile-user-settings">
-				<h1 class="profile-user-name">{{user.username}}</h1>
+				<h1 class="profile-user-name">{{profile.user.username}}</h1>
 
 				<button class="btn profile-edit-btn">Edit Profile</button>
 
@@ -31,11 +30,10 @@
 
 			<div class="profile-bio">
 				<p>
-					<span class="profile-real-name">{{user.username}} -</span> {{prof.bio}}
+					<span class="profile-real-name">{{profile.user.username}} -</span> {{profile.bio}}
 				</p>
 			</div>
 		</div>
-		{% endfor %}
         
 		<!-- End of profile section -->
 	</div>
@@ -46,9 +44,10 @@
 <article>
 	<div class="container">
 		<div class="gallery">
+			{% for post in posts %}
 			<div class="gallery-item" tabindex="0">
 				<img
-					src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
+					src="{{post.image.url}}"
 					class="gallery-image"
 					alt=""
 				/>
@@ -57,15 +56,16 @@
 					<ul>
 						<li class="gallery-item-likes">
 							<span class="visually-hidden">Likes:</span
-							><i class="fas fa-heart" aria-hidden="true"></i> 56
+							><i class="fas fa-heart" aria-hidden="true"></i> {{post.like}}
 						</li>
 						<li class="gallery-item-comments">
 							<span class="visually-hidden">Comments:</span
-							><i class="fas fa-comment" aria-hidden="true"></i> 2
+							><i class="fas fa-comment" aria-hidden="true"></i> 5
 						</li>
 					</ul>
 				</div>
 			</div>
+			{% endfor %}
 
 			<div class="gallery-item" tabindex="0">
 				<img

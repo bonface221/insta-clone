@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import NewUserForm
+from .forms import NewUserForm,NewPostForm
 from .models import Post,Profile,Comment,Followers
 
 # Create your views here.
@@ -61,8 +61,23 @@ def home (request):
 
 @login_required(login_url=('login'))
 def profile(request,pk):
-    user=User.objects.get(id=pk)
-    profile=Profile.objects.all()
-    posts=Post.objects.all()
-    context=dict(profile=profile,user=user,posts=posts)
+    profile=Profile.objects.get(id=pk)
+    posts=profile.post_set.all()
+    context=dict(profile=profile,posts=posts)
     return render(request,'base/profile.html',context)
+
+@login_required(login_url=('login'))
+def createPost(request):
+    form= NewPostForm()
+    if request.method=='POST':
+        form=NewPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            print(form)
+            post=form.save(commit=False)
+            post.profile=request.user
+            post.save()
+            return redirect('home')
+
+        print('not valid')
+    context = {'form':form}
+    return render(request,'base/post_form.html',context)

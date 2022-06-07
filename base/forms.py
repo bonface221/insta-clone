@@ -1,7 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-
+from django.forms import ModelForm
+from . models import Post
 
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
@@ -16,3 +17,9 @@ class NewUserForm(UserCreationForm):
 		if commit:
 			user.save()
 		return user
+
+class NewPostForm(ModelForm):
+	class Meta:
+		model=Post
+		fields= '__all__'
+		exclude=['profile','like']
