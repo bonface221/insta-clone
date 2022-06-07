@@ -2,16 +2,17 @@
 
 <header>
 	<div class="container">
+		{% for prof in profile %}
 		<div class="profile">
 			<div class="profile-image">
 				<img
-					src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces"
+					src="{{prof.dp.url}}"
 					alt=""
 				/>
 			</div>
 
 			<div class="profile-user-settings">
-				<h1 class="profile-user-name">janedoe_</h1>
+				<h1 class="profile-user-name">{{user.username}}</h1>
 
 				<button class="btn profile-edit-btn">Edit Profile</button>
 
@@ -22,7 +23,7 @@
 
 			<div class="profile-stats">
 				<ul>
-					<li><span class="profile-stat-count">164</span> posts</li>
+					<li><span class="profile-stat-count">50</span> posts</li>
 					<li><span class="profile-stat-count">188</span> followers</li>
 					<li><span class="profile-stat-count">206</span> following</li>
 				</ul>
@@ -30,15 +31,17 @@
 
 			<div class="profile-bio">
 				<p>
-					<span class="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit,
-					amet consectetur adipisicing elit 📷✈️🏕️
+					<span class="profile-real-name">{{user.username}} -</span> {{prof.bio}}
 				</p>
 			</div>
 		</div>
+		{% endfor %}
+        
 		<!-- End of profile section -->
 	</div>
 	<!-- End of container -->
 </header>
+
 
 <article>
 	<div class="container">
@@ -327,7 +330,7 @@
 		</div>
 		<!-- End of gallery -->
 
-		<div class="loader"></div>
+		<div style="margin-top:2.5rem; margin-bottom:1.5rem;" class="loader"></div>
 	</div>
 	<!-- End of container -->
 </article>
