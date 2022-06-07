@@ -25,12 +25,12 @@
 		</a>
 		<div style="position: relative">
 			<a class="navigation-link user-profile" >
-			<img id="profic" src="{% static 'images/cove1.jpg' %}" alt="" />
+			<img id="profic" src="{% static 'images/cove1.jpg'%}" alt="" />
 			<ul 
 			style="position: absolute;"
 			class="bubble"
 			id="bubble">
-				<li><a href="{%url 'profile' request.user.id %}">profile</a></li>
+				<li><a href="{%url 'profile' 1 %}">profile</a></li>
 				<li><a href="{% url 'logout'%}">logout</a></li>
 			</ul>
 		</a>
