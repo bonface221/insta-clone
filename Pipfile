@@ -11,6 +11,7 @@ psycopg2 = "*"
 whitenoise = "*"
 python-decouple = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 

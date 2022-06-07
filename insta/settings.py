@@ -4,6 +4,7 @@ import cloudinary.uploader
 import cloudinary.api
 import dj_database_url
 import os
+
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -17,10 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 MODE='prod'
 
-ALLOWED_HOSTS = ['.localhost', '.herokuapp.com', '.127.0.0.1']
+ALLOWED_HOSTS = ['.localhost', 'boninsta221.herokuapp.com', '.127.0.0.1']
 
 
 # Application definition
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'insta.urls'
 
@@ -145,3 +146,5 @@ cloudinary.config(
   api_key = config('api_key'), 
   api_secret = config('api_secret')
 )
+
+# Configure Django App for Heroku.
