@@ -4,6 +4,7 @@
     padding: 0;margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+    list-style-type: none;
 }
 :root{
     font-size: 10px;
@@ -47,6 +48,8 @@ body {
 .navigation-search-container input:focus {
   outline: none;
 }
+
+
 .navigation-search-container {
   position: relative;
 }
@@ -81,6 +84,37 @@ body {
 
 
 }
+.bubble{
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    background-color:#dbdbdb;
+    top: 35px;
+    z-index: 3999;
+    left:12px;
+    display: none;
+
+}
+.bubble::before{
+    position:absolute;
+
+    top:-7px;
+    left: 4px;
+    content:'';
+    width: 0;
+    border-color:#dbdbdb transparent;
+    border-style: solid;
+    border-width: 0 7px 7px;
+}
+.bubble li{
+    font-size: 1.4rem;
+    padding: 1.2rem 3rem;
+    
+}
+
+.bubble li a{
+    color: #333;
+}
+
 
 /* .notification-bubble-wrapper {
   position: relative;
@@ -426,8 +460,9 @@ body {
 
 .profile {
     padding: 5rem 0;
+
 }
-*/
+
 .profile-image {
     display: flex;
     justify-content: center;
@@ -437,6 +472,9 @@ body {
 
 .profile-image img {
     border-radius: 50%;
+    height: 20rem;
+    width: 60%;
+
 } 
 
 

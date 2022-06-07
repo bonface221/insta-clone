@@ -7,3 +7,8 @@ $(document).on("scroll", function () {
 		$(".navigation").removeClass("shrink");
 	}
 });
+$(document).ready(() => {
+	$('#profic').click(() => {
+		$('#bubble').toggle()
+	})
+})
