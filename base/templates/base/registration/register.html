@@ -29,6 +29,10 @@
 					<div>
 						<hr />
 						<p>OR</p>
+						<hr/>
+						{% for message in messages %}
+						<p class="message">{{message}}</p>
+						{% endfor %}
 						<hr />
 					</div>
 				</div>

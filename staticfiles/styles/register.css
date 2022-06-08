@@ -72,10 +72,7 @@ main{
 .page .container form, input{
   width: inherit;
 }
-.message{
-  background-color: red;
-  width:100%
-}
+
 .page .container form input{
   border: 1px solid #dbdbdb;
   background-color: #fafafa;

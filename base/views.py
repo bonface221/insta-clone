@@ -20,7 +20,8 @@ def registerPage(request):
             login(request,user)
             messages.success(request, "Registration successful." )
             return redirect('home')
-        messages.error(request, "Unsuccessful registration. Invalid information.")
+    
+        messages.error(request, "Invalid username or Password, use strong password.")
             
     context=dict(form=form)
     return render(request,'base/registration/register.html',context)
