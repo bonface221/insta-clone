@@ -67,8 +67,9 @@ def profile(request,user_name):
     following = Followers.objects.filter(user=user_obj.id)
     check_user_followers = Followers.objects.filter(another_user=user_obj)
     profile=Profile.objects.get(user=user_obj.id)
+    posts=Profile.objects.filter(profile=user_obj.id)
 
-    context = {'profile':profile,'user_obj': user_obj,'followers':check_user_followers, 'following': following}
+    context = {'posts':posts,'profile':profile,'user_obj': user_obj,'followers':check_user_followers, 'following': following}
     return render(request,'base/profile.html',context)
     
 @login_required(login_url=('login'))
