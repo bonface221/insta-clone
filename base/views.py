@@ -58,18 +58,18 @@ def logoutUser(request):
 @login_required(login_url=('login'))
 def home (request):
     posts=Post.objects.all()
+    
     context=dict(posts=posts)
     return render(request,'base/home.html',context)
 
 @login_required(login_url=('login'))
-def profile(request,user_name):
-    user_obj = User.objects.get(username=user_name)
-    following = Followers.objects.filter(user=user_obj.id)
-    check_user_followers = Followers.objects.filter(another_user=user_obj)
-    profile=Profile.objects.get(user=user_obj.id)
-    posts=Post.objects.filter(profile=user_obj.id)
+def profile(request,pk):
+    profile= Profile.objects.get(user=pk)
+    following = Followers.objects.filter(user=profile.id)
+    followers = Followers.objects.filter(another_user=profile.user)
+    posts=profile.post_set.all()
 
-    context = {'posts':posts,'profile':profile,'user_obj': user_obj,'followers':check_user_followers, 'following': following}
+    context = {'posts':posts,'profile':profile,'followers':followers, 'following': following}
     return render(request,'base/profile.html',context)
     
 @login_required(login_url=('login'))
