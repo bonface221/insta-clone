@@ -9,7 +9,6 @@
 					alt=""
 				/>
 			</div>
-			{% if user_obj.username == request.session.user%}
 			<div class="profile-user-settings">
 				<h1 class="profile-user-name">{{user_obj.username}}</h1>
 
@@ -33,7 +32,7 @@
 					<span class="profile-real-name">{{profile.user.username}} -</span> {{profile.bio}}
 				</p>
 			</div>
-			{% endif %}
+
 		</div>
         
 		<!-- End of profile section -->
