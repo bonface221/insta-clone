@@ -30,7 +30,7 @@
 			style="position: absolute;"
 			class="bubble"
 			id="bubble">
-				<li><a href="{%url 'profile' request.user.id %}">profile</a></li>
+				<li><a href="{%url 'profile' request.user %}">profile</a></li>
 				<li><a href="{% url 'logout'%}">logout</a></li>
 			</ul>
 		</a>

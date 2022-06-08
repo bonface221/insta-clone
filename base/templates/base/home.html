@@ -59,7 +59,7 @@
 			<div class="post">
 				<div class="info">
 					<div class="user">
-						<a href="{% url 'profile' post.profile.id %}">
+						<a href="{% url 'profile' post.profile.user%}">
 							<div class="dp">
 								<img src="https://res.cloudinary.com/twin221/{{post.profile.dp}}" alt="" /></div
 						></a>		
@@ -85,13 +85,11 @@
 					</p>
 					<p class="time">{{post.posted|timesince}} ago</p>
 				</div>
-				<form action="" method="post" class="comment-wrapper">
-					{% csrf_token %}
+				<div class="comment-wrapper">
 					<img src="{% static 'images/smile.PNG' %}" class="icon" alt="" />
-					
 					<input type="text" class="comment-box" placeholder="Add a comment" />
-					<button type="submit" class="comment-btn">post</button>
-				</form>
+					<button class="comment-btn">post</button>
+				</div>
 			</div>
 			{% endfor %}
 		</div>
