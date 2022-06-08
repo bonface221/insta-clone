@@ -9,7 +9,7 @@ class Profile(models.Model):
     bio=models.TextField(null=True)
 
     def __str__(self):
-        return f'{self.user}'
+        return f'{self.user.username}'
 
 class Post(models.Model):
     image=CloudinaryField('image')
