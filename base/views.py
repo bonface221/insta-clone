@@ -58,7 +58,7 @@ def logoutUser(request):
 @login_required(login_url=('login'))
 def home (request):
     posts=Post.objects.all()
-
+    profile=Post.objects.get()
     context=dict(posts=posts)
     return render(request,'base/home.html',context)
 
