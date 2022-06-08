@@ -1,14 +1,18 @@
-{% extends 'main.html'%}
+{% extends 'main.html'%} {% load cloudinary %} {% block content %}
 
-{% block content %}
-
-<div>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit"/>
-    </form>
+<div class="posting">
+	<div class="box">
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="logo">
+				<h3>Create New Post</h3>
+			</div>
+			{% for field in form %}
+			<label >{{field.label}}</label><br>
+			{{field}}<br /> {% endfor %}
+			<button class="form-btn" type="submit">Post</button>
+		</form>
+	</div>
 </div>
+
 {% endblock %}
-
-

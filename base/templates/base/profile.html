@@ -9,9 +9,9 @@
 					alt=""
 				/>
 			</div>
-
+			{% if user_obj.username == request.session.user%}
 			<div class="profile-user-settings">
-				<h1 class="profile-user-name">{{profile.user.username}}</h1>
+				<h1 class="profile-user-name">{{user_obj.username}}</h1>
 
 				<button class="btn profile-edit-btn">Edit Profile</button>
 
@@ -23,8 +23,8 @@
 			<div class="profile-stats">
 				<ul>
 					<li><span class="profile-stat-count">50</span> posts</li>
-					<li><span class="profile-stat-count">188</span> followers</li>
-					<li><span class="profile-stat-count">206</span> following</li>
+					<li><span class="profile-stat-count">{{followers.count}}</span> followers</li>
+					<li><span class="profile-stat-count">{{following.count }}</span> following</li>
 				</ul>
 			</div>
 
@@ -33,6 +33,7 @@
 					<span class="profile-real-name">{{profile.user.username}} -</span> {{profile.bio}}
 				</p>
 			</div>
+			{% endif %}
 		</div>
         
 		<!-- End of profile section -->

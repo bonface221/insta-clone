@@ -22,4 +22,4 @@ class NewPostForm(ModelForm):
 	class Meta:
 		model=Post
 		fields= '__all__'
-		exclude=['profile','like']
+		exclude=['profile','like','name']

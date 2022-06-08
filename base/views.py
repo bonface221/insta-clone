@@ -13,8 +13,10 @@ def registerPage(request):
 
     if request.method =='POST':
         form= NewUserForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():          
             user=form.save()
+            profile=Profile(user=user)
+            profile.save()
             login(request,user)
             messages.success(request, "Registration successful." )
             return redirect('home')
@@ -60,21 +62,26 @@ def home (request):
     return render(request,'base/home.html',context)
 
 @login_required(login_url=('login'))
-def profile(request,pk):
-    profile=Profile.objects.get(id=pk)
-    posts=profile.post_set.all()
-    context=dict(profile=profile,posts=posts)
-    return render(request,'base/profile.html',context)
+def profile(request,user_name):
+    user_obj = User.objects.get(username=user_name)
+    following = Followers.objects.filter(user=user_obj.id)
+    check_user_followers = Followers.objects.filter(another_user=user_obj)
+    profile=Profile.objects.get(user=user_obj.id)
 
+    context = {'profile':profile,'user_obj': user_obj,'followers':check_user_followers, 'following': following}
+    return render(request,'base/profile.html',context)
+    
 @login_required(login_url=('login'))
 def createPost(request):
     form= NewPostForm()
     if request.method=='POST':
-        form=NewPostForm(request.POST, request.FILES)
+        form=NewPostForm(request.POST,request.FILES)
         if form.is_valid():
-            print(form)
             post=form.save(commit=False)
-            post.profile=request.user
+            print(request.user.id)
+            profile=Profile.objects.get(user=request.user.id)
+
+            post.profile=profile
             post.save()
             return redirect('home')
 
