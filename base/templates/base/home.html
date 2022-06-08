@@ -61,13 +61,13 @@
 					<div class="user">
 						<a href="{% url 'profile' post.profile.user%}">
 							<div class="dp">
-								<img src="{{post.profile.dp.url}}" alt="" /></div
+								<img src="https://res.cloudinary.com/twin221/{{post.profile.dp}}" alt="" /></div
 						></a>		
 						<p class="username">{{post.profile.user}}</p>
 					</div>
 					<img src="{% static 'images/option.PNG' %}" class="options" alt="" />
 				</div>
-				<img src="{{post.image.url}}" class="post-image" alt="" />
+				<img src="https://res.cloudinary.com/twin221/{{post.image}}" class="post-image" alt="" />
 				<div class="post-content">
 					<div class="reaction-wrapper">
 						<img src="{% static 'images/like.PNG' %}" class="icon" alt="" />
